@@ -1,15 +1,15 @@
 <template>
   <div>
     <flexbox :gutter="0">
-	  <flexbox-item  :span="1/3">
+	  <flexbox-item  :span="1/4">
 	    <group title="Services">
 		  <cell style="background:lightgray"><span slot="title"><span style="vertical-align:middle;">Animal</span></span><span slot="value"><badge text="1"></badge></span></cell>
 		  <cell style="border-left:5px solid grey"><span slot="title"><span style="vertical-align:middle;">Fruit</span></span><span slot="value"></span></cell>
 		  <cell style="background:lightgray"><span slot="title"><span style="vertical-align:middle;">Building</span></span><span slot="value"></span></cell>
 	    </group>
 	  </flexbox-item>
-	  <flexbox-item :span="2/3">
-	    <panel header="Fruit" :list="list" :type="type"></panel>
+	  <flexbox-item :span="3/4">
+	    <GoodsBox header="Fruit" :list="list"></GoodsBox>
 	  </flexbox-item>	
     </flexbox>
 	<tabbar @on-index-change="onIndexChange">
@@ -30,6 +30,7 @@
 <script>
 
 import { Flexbox, FlexboxItem, Group, Cell, Badge, Panel, Tabbar, TabbarItem } from 'vux'
+import GoodsBox from '../components/GoodsBox'
 
 export default {
   components: {
@@ -40,7 +41,8 @@ export default {
     Badge,
     Panel,
     Tabbar,
-    TabbarItem
+    TabbarItem,
+    GoodsBox
   },
   data () {
     return {
