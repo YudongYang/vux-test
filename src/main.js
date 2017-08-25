@@ -7,8 +7,10 @@ import App from './App'
 import Home from './components/HelloFromVux'
 import MyHelloworld from './view/MyHelloworld'
 import SelectService from './view/select-service'
+import axios from 'axios'
 
 Vue.use(VueRouter)
+Vue.prototype.$invoke = axios
 
 const routes = [{
   path: '/',

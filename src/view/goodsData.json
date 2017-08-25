@@ -1,0 +1,55 @@
+{
+  "list": [{
+        "id": 11,
+		"pid": 1,
+        "src": "https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=95fa803e3301213fdb3e468e358e5db4/48540923dd54564e8ab250deb9de9c82d0584f05.jpg",
+        "title": "火龙果",
+        "price": 20,
+        "stock": 12
+      }, {
+        "id": 12,
+		"pid": 1,
+        "src": "https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=9f60be7fddca7bcb6976cf7ddf600006/b2de9c82d158ccbf81ef328613d8bc3eb135413f.jpg",
+        "title": "提子",
+        "price": 35.55,
+        "stock": 0
+      },{
+        "id": 21,
+		"pid": 2,
+        "src": "https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=95fa803e3301213fdb3e468e358e5db4/48540923dd54564e8ab250deb9de9c82d0584f05.jpg",
+        "title": "猫",
+        "price": 1000,
+        "stock": 1
+      }, {
+        "id": 22,
+		"pid": 2,
+        "src": "https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=9f60be7fddca7bcb6976cf7ddf600006/b2de9c82d158ccbf81ef328613d8bc3eb135413f.jpg",
+        "title": "狗",
+        "price": 1000.01,
+        "stock": 0
+      },{
+        "id": 31,
+		"pid": 3,
+        "src": "https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=95fa803e3301213fdb3e468e358e5db4/48540923dd54564e8ab250deb9de9c82d0584f05.jpg",
+        "title": "时光机",
+        "price": 510,
+        "stock": -2
+      }, {
+        "id": 32,
+		"pid": 3,
+        "src": "https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=9f60be7fddca7bcb6976cf7ddf600006/b2de9c82d158ccbf81ef328613d8bc3eb135413f.jpg",
+        "title": "一扇任意门",
+        "price": 555.55,
+        "stock": 6
+      }],
+  "kind": [{
+    "id": 1,
+    "title": "Fruit"
+  },{
+    "id": 2,
+    "title": "Animal"
+  },{
+    "id": 3,
+    "title": "Mechine"
+  }]
+}

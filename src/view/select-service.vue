@@ -1,14 +1,27 @@
 <template>
   <div>
     <flexbox :gutter="0">
-	  <flexbox-item  :span="1/4">
+	  <flexbox-item :span="3/10">
 	    <group title="Services">
-		  <cell style="background:lightgray"><span slot="title"><span style="vertical-align:middle;">Animal</span></span><span slot="value"><badge text="1"></badge></span></cell>
-		  <cell style="border-left:5px solid grey"><span slot="title"><span style="vertical-align:middle;">Fruit</span></span><span slot="value"></span></cell>
-		  <cell style="background:lightgray"><span slot="title"><span style="vertical-align:middle;">Building</span></span><span slot="value"></span></cell>
+        <div v-for="kind in kindList">
+		  <cell style="background:lightgray">
+            <span slot="title">
+              <span style="vertical-align:middle;">{{ kind.title }}</span>
+            </span>
+            <span slot="value">
+              <badge text="1"></badge>
+            </span>
+          </cell>
+        </div>
+		  <cell style="border-left:5px solid grey">
+            <span slot="title">
+              <span style="vertical-align:middle;">Fruit</span>
+            </span>
+            <span slot="value"></span>
+		  </cell>
 	    </group>
 	  </flexbox-item>
-	  <flexbox-item :span="3/4">
+	  <flexbox-item :span="7/10">
 	    <GoodsBox header="Fruit" :list="list"></GoodsBox>
 	  </flexbox-item>	
     </flexbox>
@@ -31,6 +44,7 @@
 
 import { Flexbox, FlexboxItem, Group, Cell, Badge, Panel, Tabbar, TabbarItem } from 'vux'
 import GoodsBox from '../components/GoodsBox'
+import GoodsData from './goodsData.json'
 
 export default {
   components: {
@@ -48,26 +62,13 @@ export default {
     return {
       message: 'A segment of Hello World!',
       type: '1',
-      list: [{
-        src: 'https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=95fa803e3301213fdb3e468e358e5db4/48540923dd54564e8ab250deb9de9c82d0584f05.jpg',
-        title: '火龙果',
-        price: '20',
-        url: '/component/cell'
-      }, {
-        src: 'https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=9f60be7fddca7bcb6976cf7ddf600006/b2de9c82d158ccbf81ef328613d8bc3eb135413f.jpg',
-        title: '提子提子提子提子提子提子提子提子提子提子提子提子',
-        price: '35.5555',
-        url: {
-          path: '/component/radio',
-          replace: false
-        },
-        meta: {
-          source: '来源信息',
-          date: '时间',
-          other: '其他信息'
-        }
-      }]
+      list: GoodsData.list,
+      kindList: GoodsData.kind,
+      selectedKind: '0'
     }
+  },
+  mounted () {
+    console.log(GoodsData)
   },
   methods: {
     onIndexChange (newIndex, oldIndex) {
@@ -76,3 +77,13 @@ export default {
   }
 }
 </script>
+
+<style lang="less">
+.actity {
+  border-left:5px solid grey;
+  background: white;
+}
+.unactity {
+  background: lightgray;
+}
+</style>

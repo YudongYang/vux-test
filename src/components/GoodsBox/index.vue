@@ -3,13 +3,14 @@
     <div class="weui-panel__hd" v-if="header" v-html="header"></div>
     <div class="weui-panel__bd">
       <template>
-        <div v-for="item in list" class="weui-media-box weui-media-box_appmsg" :class="{  stock:item.stock > 0}>
+        <div v-for="item in list" class="weui-media-box weui-media-box_appmsg">
           <div class="weui-media-box__hd weui-goods-box__pic" v-if="item.src">
             <img class="weui-media-box__thumb" :src="item.src" alt="" />
           </div>
           <div class="weui-media-box__bd">
             <h4 class="weui-media-box__title" v-html="item.title"></h4>
             <p class="weui-media-box__desc weui-goods-box__price" v-html="getWithSign(item.price)"></p>
+			<div class="weui-goods-box__stock__no" v-if="item.stock <= 0"><img class="weui-goods-box__thumb" src="../../assets/vux_logo.png" alt="" /></div>
             <group>
               <x-number class="weui-goods-box__quantity__line" :value="0" :min="0" @on-change="change"></x-number>
             </group>
@@ -86,7 +87,11 @@ export default {
 .weui-panel .weui-cells:after {
   border: 0 white;
 }
-.stock {
-  background: gray;
+.weui-media-box_appmsg .weui-goods-box__stock__no {
+  width: auto;
+  height: 30px;
+}
+.weui-goods-box__thumb {
+  max-height: 100%;
 }
 </style>
