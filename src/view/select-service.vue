@@ -51,12 +51,12 @@ export default {
       list: [{
         src: 'https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=95fa803e3301213fdb3e468e358e5db4/48540923dd54564e8ab250deb9de9c82d0584f05.jpg',
         title: '火龙果',
-        desc: '火龙果（拉丁文名：Hylocereus undulatus Britt），又称红龙果、龙珠果、仙蜜果、玉龙果。仙人掌科、量天尺属植物。',
+        price: '20',
         url: '/component/cell'
       }, {
         src: 'https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=9f60be7fddca7bcb6976cf7ddf600006/b2de9c82d158ccbf81ef328613d8bc3eb135413f.jpg',
-        title: '提子',
-        desc: '提子又称“美国葡萄”、“美国提子”，是葡萄的一类品种。以其果脆个大、甜酸适口、极耐贮运、品质佳等优点，被称为“葡萄之王”。',
+        title: '提子提子提子提子提子提子提子提子提子提子提子提子',
+        price: '35.5555',
         url: {
           path: '/component/radio',
           replace: false

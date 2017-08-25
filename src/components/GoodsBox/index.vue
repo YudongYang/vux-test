@@ -1,15 +1,15 @@
 <template>
-  <div class="weui-panel weui-panel_access">
+  <div class="weui-panel weui-panel_access"">
     <div class="weui-panel__hd" v-if="header" v-html="header"></div>
     <div class="weui-panel__bd">
       <template>
-        <div v-for="item in list" class="weui-media-box weui-media-box_appmsg">
+        <div v-for="item in list" class="weui-media-box weui-media-box_appmsg" :class="{  stock:item.stock > 0}>
           <div class="weui-media-box__hd weui-goods-box__pic" v-if="item.src">
             <img class="weui-media-box__thumb" :src="item.src" alt="" />
           </div>
           <div class="weui-media-box__bd">
             <h4 class="weui-media-box__title" v-html="item.title"></h4>
-            <p class="weui-media-box__desc" v-html="item.desc"></p>
+            <p class="weui-media-box__desc weui-goods-box__price" v-html="getWithSign(item.price)"></p>
             <group>
               <x-number class="weui-goods-box__quantity__line" :value="0" :min="0" @on-change="change"></x-number>
             </group>
@@ -22,6 +22,7 @@
 
 <script>
 import { Group, XNumber, XSwitch, Divider } from 'vux'
+import Money from '../../Money'
 
 export default {
   components: {
@@ -35,9 +36,16 @@ export default {
     header: String,
     list: Array
   },
+  computed: {
+
+  },
   methods: {
     change (val) {
       console.log('change', val)
+    },
+    getWithSign (val) {
+      let money = new Money(val)
+      return money.getWithSign()
     }
   }
 }
@@ -54,6 +62,10 @@ export default {
 .weui-media-box_appmsg .weui-goods-box__pic {
   height: 80px;
   width: 80px;
+}
+.weui-media-box_appmsg .weui-goods-box__price {
+  color: red;
+  font-size: 17px;
 }
 .weui-media-box_appmsg .weui-goods-box__quantity__line {
   padding: 0 0;
@@ -73,5 +85,8 @@ export default {
 }
 .weui-panel .weui-cells:after {
   border: 0 white;
+}
+.stock {
+  background: gray;
 }
 </style>
